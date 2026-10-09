@@ -30,6 +30,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 18px; /* Aumentar o tamanho base de tudo (1 rem = 18px em vez de 16px) */
 }
 
 body {
@@ -52,9 +53,10 @@ a {
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1600px; /* Expandido para monitores largos (4K) */
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 4%;
+  width: 100%;
 }
 
 /* ==========================================================================
@@ -80,12 +82,12 @@ a {
    HEADER / NAV
    ========================================================================== */
 .site-header {
-  position: absolute; /* Começa integrado no topo, como no exemplar */
+  position: absolute;
   width: 100%;
   top: 0;
   z-index: 100;
   background-color: transparent;
-  padding: 2.5rem 0;
+  padding: 3rem 0; /* Mais espaçamento no topo */
   transition: background-color 0.6s var(--ease-lux), padding 0.6s var(--ease-lux), box-shadow 0.6s var(--ease-lux);
 }
 
@@ -94,7 +96,7 @@ a {
   background-color: var(--bg-nav);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 1.2rem 0;
+  padding: 1.5rem 0;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -107,7 +109,7 @@ a {
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   transition: transform 0.4s var(--ease-lux);
 }
 
@@ -117,14 +119,14 @@ a {
 
 .logo-icon {
   color: var(--gold);
-  width: 35px;
-  height: 35px;
+  width: 50px; 
+  height: 50px; 
 }
 
 .logo-text {
   font-family: var(--font-serif);
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 2.2rem; 
   letter-spacing: 1px;
   font-weight: 600;
 }
@@ -136,11 +138,11 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3.5rem; 
 }
 
 .nav-links a {
-  font-size: 0.8rem;
+  font-size: 1.1rem; 
   text-transform: capitalize;
   letter-spacing: 0.5px;
   font-weight: 500;
@@ -154,7 +156,7 @@ a {
 }
 
 /* ==========================================================================
-   HERO SECTION (Atualizado para o novo exemplar)
+   HERO SECTION
    ========================================================================== */
 .hero {
   position: relative;
@@ -186,23 +188,24 @@ a {
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  /* Gradiente mais neutro e escuro, como no exemplar */
-  background: linear-gradient(90deg, rgba(10, 10, 12, 0.9) 0%, rgba(10, 10, 12, 0.6) 50%, rgba(10, 10, 12, 0.3) 100%);
-  z-index: 2;
+  background: linear-gradient(90deg, rgba(10, 10, 12, 0.95) 0%, rgba(10, 10, 12, 0.5) 50%, rgba(10, 10, 12, 0.1) 100%);
+  z-index: 3;
 }
 
 .hero-content {
   position: relative;
-  z-index: 3;
-  max-width: 700px;
+  z-index: 4;
+  max-width: 900px; 
   padding-top: 5rem;
+  text-align: left; 
+  width: 100%;
 }
 
 .hero-tag {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 1.1rem; 
   color: var(--gold);
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   display: block;
@@ -211,28 +214,30 @@ a {
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: 4.5rem;
+  font-size: clamp(4rem, 6vw, 7rem); /* Fica gigante em monitores 4K */
   line-height: 1.1;
   color: #fff;
   font-weight: 500;
-  margin-bottom: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 .hero-desc {
   font-family: var(--font-sans);
-  font-size: 1rem;
-  color: rgba(255,255,255,0.7);
+  font-size: 1.2rem; /* Aumentado */
+  color: rgba(255,255,255,0.8);
   line-height: 1.8;
   margin-bottom: 3.5rem;
   font-weight: 400;
+  max-width: 90%;
 }
 
 .hero-buttons {
   display: flex;
   gap: 1.5rem;
+  justify-content: flex-start;
 }
 
-/* Info Bar Fixa na Base do Hero (Característica principal do novo exemplar) */
+/* Info Bar Fixa na Base do Hero */
 .hero-contact-bar {
   position: absolute;
   bottom: 0;
@@ -249,7 +254,7 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 2rem;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -258,14 +263,14 @@ a {
   align-items: center;
   gap: 1rem;
   color: #ccc;
-  font-size: 0.85rem;
+  font-size: 1rem; /* Aumentado */
   font-weight: 500;
 }
 
 .contact-item svg {
   color: var(--gold);
-  width: 18px;
-  height: 18px;
+  width: 24px; /* Aumentado */
+  height: 24px; /* Aumentado */
 }
 
 .contact-divider {
@@ -280,15 +285,15 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.1rem 2.5rem;
+  padding: 1.2rem 3rem; /* Aumentado */
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 1rem; /* Aumentado */
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.4s var(--ease-lux), box-shadow 0.4s var(--ease-lux), background-color 0.3s, color 0.3s;
-  border-radius: 3px;
+  border-radius: 4px;
   position: relative;
   overflow: hidden;
   z-index: 1;
